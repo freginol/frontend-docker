@@ -1,8 +1,25 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Steps to Run the Docker file.
+
+### Step 1:
+
 
 In the project directory, you can run:
+docker build -t sample:dev .
+
+### Step 2:
+Run the following command to run the docker.
+
+docker run \
+    -it \
+    --rm \
+    -v ${PWD}:/app \
+    -v /app/node_modules \
+    -p 3001:3000 \
+    -e CHOKIDAR_USEPOLLING=true \
+   sample:dev
+
 
 ### `npm start`
 
